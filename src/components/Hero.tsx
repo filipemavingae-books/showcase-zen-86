@@ -34,14 +34,15 @@ const Hero = () => {
           {/* Main Content */}
           <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent leading-tight">
-              Desenvolvedor & Designer
+              Isaac Muaco Dev
             </h1>
             <h2 className="text-xl md:text-2xl lg:text-3xl font-medium text-muted-foreground mb-8">
-              Criando experiências digitais excepcionais
+              Desenvolvedor Full Stack
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-              Especialista em desenvolvimento web moderno, design UI/UX e soluções digitais inovadoras. 
-              Transformo ideias em realidade digital.
+              Desenvolvedor especializado em criar soluções web modernas e inovadoras. 
+              Transformo suas ideias em aplicações digitais de alta qualidade usando 
+              React, TypeScript, Node.js e as tecnologias mais avançadas do mercado.
             </p>
 
             {/* CTA Buttons */}

@@ -65,20 +65,26 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: Mail,
-      title: 'Email',
-      value: 'contato@portfolio.com',
-      link: 'mailto:contato@portfolio.com'
+      title: 'Email Pessoal',
+      value: 'isaacmuaco582@gmail.com',
+      link: 'mailto:isaacmuaco582@gmail.com'
+    },
+    {
+      icon: Mail,
+      title: 'Email Empresa',
+      value: 'muacokumbu@gmail.com',
+      link: 'mailto:muacokumbu@gmail.com'
     },
     {
       icon: Phone,
-      title: 'Telefone',
-      value: '+55 (11) 99999-9999',
-      link: 'tel:+5511999999999'
+      title: 'WhatsApp',
+      value: '+244947541761',
+      link: 'https://wa.me/244947541761'
     },
     {
       icon: MapPin,
       title: 'Localização',
-      value: 'São Paulo, Brasil',
+      value: 'Angola',
       link: '#'
     }
   ];

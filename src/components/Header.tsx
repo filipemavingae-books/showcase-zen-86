@@ -1,8 +1,16 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, MessageCircle, LogOut, LogIn } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { User } from '@supabase/supabase-js';
 
-const Header = () => {
+interface HeaderProps {
+  user: User | null;
+  onOpenChat: () => void;
+  onSignOut: () => void;
+  onOpenAuth: () => void;
+}
+
+const Header = ({ user, onOpenChat, onSignOut, onOpenAuth }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -35,7 +43,7 @@ const Header = () => {
           {/* Logo/Name */}
           <div className="flex items-center space-x-2">
             <div className="text-xl md:text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              Portfolio
+              Isaac Muaco Dev
             </div>
           </div>
 
@@ -54,6 +62,37 @@ const Header = () => {
               </button>
             ))}
           </nav>
+
+          {/* Desktop Actions */}
+          <div className="hidden md:flex items-center space-x-4">
+            <Button 
+              onClick={onOpenChat}
+              className="bg-gradient-primary hover:shadow-glow transition-all duration-300 text-white font-semibold"
+            >
+              <MessageCircle className="w-4 h-4 mr-2" />
+              Chat IA
+            </Button>
+            
+            {user ? (
+              <Button 
+                onClick={onSignOut}
+                variant="outline"
+                className="border-border hover:bg-muted"
+              >
+                <LogOut className="w-4 h-4 mr-2" />
+                Sair
+              </Button>
+            ) : (
+              <Button 
+                onClick={onOpenAuth}
+                variant="outline"
+                className="border-border hover:bg-muted"
+              >
+                <LogIn className="w-4 h-4 mr-2" />
+                Entrar
+              </Button>
+            )}
+          </div>
 
           {/* Mobile Menu Button */}
           <Button
@@ -82,6 +121,45 @@ const Header = () => {
                    item === 'servicos' ? 'Serviços' : 'Contato'}
                 </button>
               ))}
+
+              <div className="space-y-3 pt-4 border-t border-border">
+                <Button 
+                  onClick={() => {
+                    onOpenChat();
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="w-full bg-gradient-primary hover:shadow-glow transition-all duration-300 text-white font-semibold"
+                >
+                  <MessageCircle className="w-4 h-4 mr-2" />
+                  Chat IA
+                </Button>
+                
+                {user ? (
+                  <Button 
+                    onClick={() => {
+                      onSignOut();
+                      setIsMobileMenuOpen(false);
+                    }}
+                    variant="outline"
+                    className="w-full border-border hover:bg-muted"
+                  >
+                    <LogOut className="w-4 h-4 mr-2" />
+                    Sair
+                  </Button>
+                ) : (
+                  <Button 
+                    onClick={() => {
+                      onOpenAuth();
+                      setIsMobileMenuOpen(false);
+                    }}
+                    variant="outline"
+                    className="w-full border-border hover:bg-muted"
+                  >
+                    <LogIn className="w-4 h-4 mr-2" />
+                    Entrar
+                  </Button>
+                )}
+              </div>
             </nav>
           </div>
         )}

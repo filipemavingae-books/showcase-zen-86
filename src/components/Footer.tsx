@@ -1,25 +1,25 @@
-import { Github, Linkedin, Twitter, Instagram, Heart } from 'lucide-react';
+import { Github, Linkedin, Twitter, Instagram, Heart, Facebook } from 'lucide-react';
 
 const Footer = () => {
   const socialLinks = [
     {
+      icon: Facebook,
+      href: 'https://www.facebook.com/isaac.muaco582',
+      label: 'Facebook'
+    },
+    {
       icon: Github,
-      href: 'https://github.com',
+      href: 'https://github.com/isaacmuaco',
       label: 'GitHub'
     },
     {
       icon: Linkedin,
-      href: 'https://linkedin.com',
+      href: 'https://linkedin.com/in/isaacmuaco',
       label: 'LinkedIn'
     },
     {
-      icon: Twitter,
-      href: 'https://twitter.com',
-      label: 'Twitter'
-    },
-    {
       icon: Instagram,
-      href: 'https://instagram.com',
+      href: 'https://instagram.com/isaacmuaco',
       label: 'Instagram'
     }
   ];
@@ -95,7 +95,7 @@ const Footer = () => {
           <div className="border-t border-background/20 pt-8">
             <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
               <div className="flex items-center space-x-2 text-background/80 text-sm">
-                <span>© 2024 Portfolio. Feito com</span>
+                <span>© 2024 Isaac Muaco Dev. Feito com</span>
                 <Heart className="w-4 h-4 text-red-400" />
                 <span>e muito café</span>
               </div>
