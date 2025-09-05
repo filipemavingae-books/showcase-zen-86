@@ -5,58 +5,58 @@ import { Card } from '@/components/ui/card';
 const Portfolio = () => {
   const projects = [
     {
-      id: 1,
+      id: crypto.randomUUID(),
       title: 'E-commerce Moderno',
-      description: 'Plataforma completa de vendas online com design responsivo, sistema de pagamentos integrado e painel administrativo avançado.',
+      description: 'Plataforma completa de e-commerce com carrinho, pagamentos e painel administrativo.',
       image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop&crop=center',
-      tags: ['React', 'TypeScript', 'Stripe', 'Node.js'],
-      githubUrl: '#',
-      liveUrl: '#'
+      tags: ['React', 'TypeScript', 'Supabase', 'Stripe'],
+      githubUrl: 'https://github.com/isaacmuaco/ecommerce-project',
+      liveUrl: 'https://ecommerce-demo.isaacmuaco.dev'
     },
     {
-      id: 2,
+      id: crypto.randomUUID(),
       title: 'Dashboard Analytics',
-      description: 'Interface intuitiva para análise de dados com gráficos interativos, filtros avançados e relatórios em tempo real.',
+      description: 'Sistema de análise de dados em tempo real com gráficos interativos e relatórios.',
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&crop=center',
-      tags: ['React', 'D3.js', 'PostgreSQL', 'API REST'],
-      githubUrl: '#',
-      liveUrl: '#'
+      tags: ['Next.js', 'Chart.js', 'PostgreSQL', 'API'],
+      githubUrl: 'https://github.com/isaacmuaco/dashboard-project',
+      liveUrl: 'https://dashboard-demo.isaacmuaco.dev'
     },
     {
-      id: 3,
-      title: 'App Mobile Fitness',
-      description: 'Aplicativo para acompanhamento de exercícios e nutrição com gamificação, metas personalizadas e comunidade integrada.',
+      id: crypto.randomUUID(),
+      title: 'App de Gestão',
+      description: 'Aplicação completa para gestão de projetos e equipes com funcionalidades colaborativas.',
       image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop&crop=center',
-      tags: ['React Native', 'Firebase', 'Redux', 'UI/UX'],
-      githubUrl: '#',
-      liveUrl: '#'
+      tags: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
+      githubUrl: 'https://github.com/isaacmuaco/gestao-project',
+      liveUrl: 'https://gestao-demo.isaacmuaco.dev'
     },
     {
-      id: 4,
-      title: 'SaaS Platform',
-      description: 'Plataforma completa para gestão de projetos com colaboração em tempo real, automações e integrações avançadas.',
+      id: crypto.randomUUID(),
+      title: 'Landing Page Corporativa',
+      description: 'Site institucional responsivo com animações suaves e otimização SEO.',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&crop=center',
-      tags: ['Next.js', 'Prisma', 'Supabase', 'Tailwind'],
-      githubUrl: '#',
-      liveUrl: '#'
+      tags: ['HTML5', 'CSS3', 'JavaScript', 'SEO'],
+      githubUrl: 'https://github.com/isaacmuaco/landing-project',
+      liveUrl: 'https://landing-demo.isaacmuaco.dev'
     },
     {
-      id: 5,
-      title: 'Website Corporativo',
-      description: 'Site institucional com design elegante, otimização SEO, sistema de blog e integração com CRM.',
+      id: crypto.randomUUID(),
+      title: 'Sistema de Reservas',
+      description: 'Plataforma de agendamento online com calendário integrado e notificações.',
       image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop&crop=center',
-      tags: ['WordPress', 'PHP', 'MySQL', 'SEO'],
-      githubUrl: '#',
-      liveUrl: '#'
+      tags: ['Vue.js', 'Laravel', 'MySQL', 'Calendar API'],
+      githubUrl: 'https://github.com/isaacmuaco/reservas-project',
+      liveUrl: 'https://reservas-demo.isaacmuaco.dev'
     },
     {
-      id: 6,
-      title: 'Sistema de Gestão',
-      description: 'ERP personalizado para pequenas empresas com módulos financeiro, estoque, vendas e relatórios gerenciais.',
+      id: crypto.randomUUID(),
+      title: 'Chat em Tempo Real',
+      description: 'Aplicação de mensagens instantâneas com salas privadas e compartilhamento de arquivos.',
       image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop&crop=center',
-      tags: ['Vue.js', 'Laravel', 'MySQL', 'Docker'],
-      githubUrl: '#',
-      liveUrl: '#'
+      tags: ['React', 'Socket.io', 'Express', 'File Upload'],
+      githubUrl: 'https://github.com/isaacmuaco/chat-project',
+      liveUrl: 'https://chat-demo.isaacmuaco.dev'
     }
   ];
 
