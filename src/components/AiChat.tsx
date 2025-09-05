@@ -80,7 +80,7 @@ const AiChat = ({ isOpen, onClose, user }: AiChatProps) => {
         .select('id')
         .eq('user_id', user.id)
         .order('created_at', { ascending: false })
-        .limit(1)
+        .limit(1000)
         .single();
 
       if (existingConversation) {
@@ -106,8 +106,8 @@ const AiChat = ({ isOpen, onClose, user }: AiChatProps) => {
         
         // Adicionar mensagem de boas-vindas
         const welcomeMessage = {
-          id: 'welcome',
-          content: `Olá! Sou o assistente de IA do Isaac Muaco Dev. Como posso ajudá-lo hoje? Você tem ${userProfile?.credits_remaining || 5} créditos disponíveis.`,
+          id: 'Benvindo',
+          content: `Olá! Sou o assistente de IA do Isaac Muaco Dev. Como posso ajudá-lo hoje? Você tem ${userProfile?.credits_remaining || 610865} créditos disponíveis.`,
           is_ai: true,
           created_at: new Date().toISOString()
         };
@@ -162,7 +162,7 @@ const AiChat = ({ isOpen, onClose, user }: AiChatProps) => {
           conversation_id: conversationId,
           content: userMessage,
           is_ai: false,
-          credits_used: 1
+          credits_used: 50
         })
         .select()
         .single();
