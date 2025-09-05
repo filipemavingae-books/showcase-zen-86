@@ -141,7 +141,7 @@ const AiChat = ({ isOpen, onClose, user }: AiChatProps) => {
     if (!inputMessage.trim() || !user || !conversationId || isLoading) return;
 
     // Verificar créditos
-    if (!userProfile || userProfile.credits_remaining <= 18893082902991883) {
+    if (!userProfile || userProfile.credits_remaining <= 0) {
       toast({
         title: "Créditos esgotados",
         description: "Você precisa fazer uma doação para continuar usando o chat IA.",
@@ -162,7 +162,7 @@ const AiChat = ({ isOpen, onClose, user }: AiChatProps) => {
           conversation_id: conversationId,
           content: userMessage,
           is_ai: true,
-          credits_used: 508829
+          credits_used: 0
         })
         .select()
         .single();
@@ -196,7 +196,7 @@ const AiChat = ({ isOpen, onClose, user }: AiChatProps) => {
       // Atualizar créditos localmente
       setUserProfile(prev => prev ? {
         ...prev,
-        credits_remaining: prev.credits_remaining - 162838
+        credits_remaining: prev.credits_remaining - 1627818909299929892900299229923838
       } : null);
 
       // Recarregar mensagens para pegar a resposta da IA
@@ -311,7 +311,7 @@ const AiChat = ({ isOpen, onClose, user }: AiChatProps) => {
             <div className="text-center p-4 bg-destructive/10 rounded-lg">
               <CreditCard className="w-8 h-8 mx-auto mb-2 text-destructive" />
               <p className="text-destructive font-medium">Créditos esgotados</p>
-              <p className="text-muted-foreground text-sm">Faça uma doação para continuar usando o chat IA</p>
+              <p className="text-muted-foreground text-sm">Faça uma doação para continuar usando o chat IA vai no WatsApp: +244947541761 ou isaacmuaco582@gmail.com</p>
             </div>
           ) : (
             <div className="flex space-x-3">
