@@ -100,6 +100,65 @@ export type Database = {
         }
         Relationships: []
       }
+      chat_conversations: {
+        Row: {
+          created_at: string | null
+          id: string
+          title: string | null
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          title?: string | null
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          title?: string | null
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      chat_messages: {
+        Row: {
+          content: string
+          conversation_id: string
+          created_at: string | null
+          credits_used: number | null
+          id: string
+          is_ai: boolean | null
+        }
+        Insert: {
+          content: string
+          conversation_id: string
+          created_at?: string | null
+          credits_used?: number | null
+          id?: string
+          is_ai?: boolean | null
+        }
+        Update: {
+          content?: string
+          conversation_id?: string
+          created_at?: string | null
+          credits_used?: number | null
+          id?: string
+          is_ai?: boolean | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "chat_messages_conversation_id_fkey"
+            columns: ["conversation_id"]
+            isOneToOne: false
+            referencedRelation: "chat_conversations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       conversations: {
         Row: {
           created_at: string
@@ -420,11 +479,45 @@ export type Database = {
         }
         Relationships: []
       }
+      user_profiles: {
+        Row: {
+          created_at: string | null
+          credits_remaining: number | null
+          display_name: string | null
+          id: string
+          plan_type: string | null
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          credits_remaining?: number | null
+          display_name?: string | null
+          id?: string
+          plan_type?: string | null
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          credits_remaining?: number | null
+          display_name?: string | null
+          id?: string
+          plan_type?: string | null
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
+      decrement_user_credits: {
+        Args: { credits_to_use?: number; user_uuid: string }
+        Returns: boolean
+      }
       generate_with_gemini: {
         Args: { max_tokens?: number; model?: string; prompt: string }
         Returns: Json
